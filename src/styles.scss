@@ -1,0 +1,14 @@
+/* You can add global styles to this file, and also import other style files */
+
+body {
+  font-size: 12px;
+}
+
+$component-list: app-base app-list app-root;
+@each $current-component in $component-list {
+  #{$current-component} {
+    margin-top: 5rem;
+    display: block;
+  }
+}
+

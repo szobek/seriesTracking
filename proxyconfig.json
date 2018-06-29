@@ -1,0 +1,7 @@
+{
+  "/api/cttlXmNECZUKifCw/episode/tracking": {
+    "target": "https://tvstore.me",
+    "secure": false,
+    "changeOrigin": true
+  }
+}

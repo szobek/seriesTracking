@@ -3,7 +3,11 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+    production: false,
+    api: {
+        baseUrl: 'https://tvstore.me/api/',
+        categories: '/episode/tracking?action=getcategs'
+    }
 };
 
 /*

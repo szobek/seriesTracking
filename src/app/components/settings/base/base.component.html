@@ -1,0 +1,13 @@
+<div class="container">
+  <div class="row">
+    <div class="col">
+      <h4>Settings</h4>
+      <hr>
+      <form [formGroup]="apiKeyForm" (submit)="saveForm()">
+        <label for="apiKey">ApiKey</label>
+        <input type="text" class="form-control" name="" id="apiKey" formControlName="apiKey" autocomplete="off">
+        <button class="btn btn-success">Save ApiKey</button>
+      </form>
+    </div>
+  </div>
+</div>
