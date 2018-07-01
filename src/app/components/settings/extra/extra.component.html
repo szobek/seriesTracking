@@ -1,0 +1,32 @@
+<p>
+  extra works!
+
+</p>
+
+
+<div class="container" *ngIf="type === 'all'">
+  <div class="row">
+    <div class="col-8 offset-2">
+      <div class="list-group">
+        <a *ngFor="let data of testSub | async" (click)="callSingleItem(data.id)" class="list-group-item list-group-item-action flex-column align-items-start m-2">
+          <div class="d-flex w-100 justify-content-between">
+            <h5 class="mb-1">{{ data.title}}</h5>
+            <small>#{{ data.userId }}</small>
+          </div>
+          <p class="mb-1">{{ data.body}}</p>
+          <small>{{ data.id }}</small>
+        </a>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div class="container" *ngIf="type === 'single'">
+  <div class="row">
+    <div class="col-12">
+      {{ singleItem | async | json}}
+    </div>
+  </div>
+</div>

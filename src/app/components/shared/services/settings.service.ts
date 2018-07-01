@@ -8,6 +8,9 @@ export class SettingsService {
 
     apiKey$: BehaviorSubject<string> = new BehaviorSubject<string>('');
 
+
+
+
     constructor() {
         if (localStorage.apiKey && localStorage.apiKey !== '') {
             this.apiKey$.next(localStorage.apiKey);

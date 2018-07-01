@@ -3,7 +3,7 @@ import {
     HttpInterceptor,
     HttpEvent,
     HttpHandler,
-    HttpRequest,
+    HttpRequest, HttpHeaders,
 } from '@angular/common/http';
 
 import {Observable} from 'rxjs';
@@ -16,10 +16,13 @@ export class AuthHttpInterceptor implements HttpInterceptor {
     intercept(req: HttpRequest<any>,
               next: HttpHandler): Observable<HttpEvent<any>> {
 
-        req = req.clone({headers: req.headers.set('Content-Type', 'X-Auth-Token')});
-        req = req.clone({headers: req.headers.set('Access-Control-Allow-Origin', '*')});
-        req = req.clone({headers: req.headers.set('Access-Control-Allow-Method', 'GET, POST, PATCH, PUT, DELETE, OPTION')});
-        req = req.clone({headers: req.headers.set('Access-Control-Allow-Headers', 'Origin')});
+        // req = req.clone({ headers: req.headers.set('X-Content-Type-Options', 'nosniff') });
+        // req = req.clone({headers: req.headers.set('Accept', 'application/json')});
+        // req = req.clone({headers: req.headers.set('Access-Control-Allow-Credentials', 'true')});
+        // req = req.clone({headers: req.headers.set('Access-Control-Allow-Origin', '*')});
+        // req = req.clone({headers: req.headers.set('Access-Control-Allow-Method', 'GET, POST, PATCH, PUT, DELETE, OPTION')});
+        // req = req.clone({headers: req.headers.set('Access-Control-Allow-Headers', 'Origin')});
+        // req = req.clone({headers: req.headers.set('Access-Control-Allow-Headers', 'Origin, Content-Type, X-Auth-Token')});
 
 
         /*
@@ -30,5 +33,8 @@ export class AuthHttpInterceptor implements HttpInterceptor {
 
         return next.handle(req);
     }
+
+
+
 }
 
